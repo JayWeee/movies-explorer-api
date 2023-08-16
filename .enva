@@ -1,4 +1,0 @@
-PORT=3000
-NODE_ENV='production'
-JWT_SECRET='fbbb86eaf20f7706bde0053f33ccc9d6f158e23cf41f4dbab83c18c5a77eed68'
-DB_HOST='mongodb://127.0.0.1:27017/bitfilmsdb'
