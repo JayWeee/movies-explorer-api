@@ -1,6 +1,7 @@
 const allowedCors = [
-  'localhost:3000',
   'http://localhost:3000',
+  'http://films-explorer.nomoreparties.co',
+  'https://films-explorer.nomoreparties.co',
 ];
 
 module.exports = (req, res, next) => {
