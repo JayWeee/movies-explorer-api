@@ -9,6 +9,7 @@ const ForbiddenErr = require('../errors/forbidden-err');
 const {
   CREATE_MOVIE_ERROR_MESSAGE,
   NOT_FOUND_MOVIE_ERROR_MESSAGE,
+  BAD_REQUEST_MOVIE_ID_ERROR_MESSAGE,
   DELETE_MOVIE_ERROR_MESSAGE,
   DELETE_MOVIE_MESSAGE,
 } = require('../utils/constants');
@@ -72,7 +73,7 @@ const deleteMovie = (req, res, next) => {
     })
     .catch((err) => {
       if (err instanceof CastError) {
-        next(new BadRequestErr(NOT_FOUND_MOVIE_ERROR_MESSAGE));
+        next(new BadRequestErr(BAD_REQUEST_MOVIE_ID_ERROR_MESSAGE));
       } else next(err);
     });
 };
