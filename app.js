@@ -14,12 +14,12 @@ const { SERVER_PORT, DB } = require('./utils/config');
 
 mongoose.connect(DB);
 
+app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors);
-app.use(requestLogger);
 app.use(router);
 app.use(errorLogger);
 

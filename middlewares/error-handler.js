@@ -1,5 +1,6 @@
 const { HTTP_STATUS_BAD_REQUEST } = require('http2').constants;
 const { isCelebrateError } = require('celebrate');
+const { INTERNAL_SERVER_ERROR_MESSAGE } = require('../utils/constants');
 
 const errorHandler = (err, req, res, next) => {
   if (isCelebrateError(err)) {
@@ -12,7 +13,7 @@ const errorHandler = (err, req, res, next) => {
     const { statusCode = 500, message } = err;
     res.status(statusCode).send({
       message: statusCode === 500
-        ? 'На сервере произошла ошибка.'
+        ? INTERNAL_SERVER_ERROR_MESSAGE
         : message,
     });
   }

@@ -13,6 +13,8 @@ const DELETE_MOVIE_MESSAGE = 'Фильм удален.';
 const UNAUTHORIZED_ERROR_MESSAGE = 'Необходима авторизация.';
 const NOT_FOUND_PAGE_ERROR_MESSAGE = 'Страница по указанному маршруту не найдена.';
 
+const INTERNAL_SERVER_ERROR_MESSAGE = 'На сервере произошла ошибка.';
+
 module.exports = {
   UPDATE_PROFILE_ERROR_MESSAGE,
   EMAIL_CONFLICT_ERROR_MESSAGE,
@@ -26,4 +28,5 @@ module.exports = {
   DELETE_MOVIE_MESSAGE,
   UNAUTHORIZED_ERROR_MESSAGE,
   NOT_FOUND_PAGE_ERROR_MESSAGE,
+  INTERNAL_SERVER_ERROR_MESSAGE,
 };
