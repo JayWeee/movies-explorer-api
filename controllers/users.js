@@ -51,11 +51,20 @@ const createuser = (req, res, next) => {
       name,
       password: hashPassword,
     }))
-    .then((user) => res.status(HTTP_STATUS_CREATED).send({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-    }))
+    .then((user) => {
+      const token = jwt.sign(
+        { _id: user._id },
+        SECRET_KEY,
+        { expiresIn: '7d' },
+      );
+      res.cookie('token', token, { maxAge: 3600000 * 24 * 7, httpOnly: true })
+        .status(HTTP_STATUS_CREATED)
+        .send({
+          userId: user._id,
+          name: user.name,
+          email: user.email,
+        });
+    })
     .catch((err) => {
       if (err instanceof ValidationError) {
         next(new BadRequestErr(CREATE_USER_ERROR_MESSAGE));
