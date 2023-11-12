@@ -1,9 +1,8 @@
 # Movies Explorer API
 
 ## Описание
-REST API созданное для сервиса поиска фильмов [Movies Explorer](https://films-explorer.nomoreparties.co).
-
-Домен: https://api.films-explorer.nomoreparties.co
+REST API созданное для сервиса поиска фильмов [Movies Explorer](https://films-explorer.nomoreparties.co).  
+Ссылка на frontend часть: https://github.com/JayWeee/movies-explorer-frontend
 
 ## Роуты
 | Метод | Роут | Описание | Значения |
